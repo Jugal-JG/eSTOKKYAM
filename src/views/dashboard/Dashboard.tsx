@@ -20,6 +20,7 @@ import Text2 from "../../components/text/Text2";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import { useNavigate } from "react-router-dom";
+import StakingCalculator from "./StakingCalculator";
 
 const Dashboard = () => {
   const [isPublished, setIsPublished] = useState(false);
@@ -51,9 +52,10 @@ const Dashboard = () => {
       <Box sx={{ background: "linear-gradient(to bottom, #173039, #00b4c9)" }}>
         <Box
           sx={{
-            padding: "50px 80px",
+            padding: { xs: "28px 16px", sm: "50px 80px" },
             [theme.breakpoints.up("sm")]: { maxWidth: "1400px" },
-            width: "calc(100vw - 6px)",
+            width: "100%",
+            boxSizing: "border-box",
             margin: "auto",
             textAlign: "left",
           }}
@@ -96,12 +98,14 @@ const Dashboard = () => {
           </Box>
         </Box>
       </Box>
+      <StakingCalculator />
       <Box
         sx={{
           minHeight: "calc(100vh - 450px)",
           backgroundColor: "#fff",
-          padding: "80px 24px",
+          padding: { xs: "24px 16px", sm: "80px 24px" },
           display: "flex",
+          flexDirection: { xs: "column", md: "row" },
           gap: "20px",
         }}
       >
@@ -111,7 +115,7 @@ const Dashboard = () => {
             sx={{
               backgroundColor: "#00dbe3",
               borderRadius: "6px",
-              width: "352px",
+              width: { xs: "100%", md: "352px" },
               height: "64px",
               fontSize: "24px",
               lineHeight: "60px",
@@ -127,7 +131,7 @@ const Dashboard = () => {
             sx={{
               backgroundColor: "#23a2bb",
               borderRadius: "6px",
-              width: "352px",
+              width: { xs: "100%", md: "352px" },
               height: "64px",
               fontSize: "24px",
               lineHeight: "60px",
@@ -143,7 +147,7 @@ const Dashboard = () => {
             sx={{
               backgroundColor: "#173039",
               borderRadius: "6px",
-              width: "352px",
+              width: { xs: "100%", md: "352px" },
               height: "64px",
               fontSize: "24px",
               lineHeight: "60px",
@@ -155,7 +159,7 @@ const Dashboard = () => {
             Exchange
           </Button>
         </Box>
-        <Box sx={{ overflow: "auto", width: { sm: "100%" } }}>
+        <Box sx={{ overflow: "auto", minWidth: 0, width: "100%" }}>
           <Table
             aria-label="simple table"
             sx={{
